@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>trivia</title>
+</head>
+
+<body> 
+    <div id="preguntas" ></div>
+    <div id="respuestas"></div>
+    <input type="button" value = "a ver si acerté" onclic = "comprobar" ()>
+    
+<script>
+    <var preguntas = [
+            "¿De que color era el caballo blanco de San Martín?",
+            "Fecha del primer gobierno patrio argentino",
+            "Fecha de la independencia argentina",
+            "¿Quien escribio el Himno Nacional Argentino?",
+            "¿Quien repartio, según cuenta la tradición, escarapelas en la plaza de mayo?",
+            ]>;
+            ></var>
+          
+    <var respuestas = [
+    ["blanco", "negro", "rojo"],
+    ["25 de mayo de 1810", "25 de mayo de 1816", "9 de junio de 1816"],
+    ["9 de julio de 1816", "2 de abril de 1816", "9 de junio de 1810"],
+    ["Lopez y Planes", "Cabral", "Blas Parera"],
+    ["French y Verutti", "Mariquita Sanchez de Tompson", "Vendedores de velas"],
+     ];
+     ></var>
+
+    <var indice_aleatorio = Math.floor (Math.random()*preguntas.length),
+    ></var>
+
+
+    <var respuestas_posibles = respuestas [indice_aleatorio];
+    ></var>
+
+    <var posiciones = [0,1,2];
+    ></var>
+    <var respuestas_reordenadas = [];
+    ></var>
+    
+    <var indice_respuesta_correcta;
+    ></var>
+    for (i in respuestas_posibles) {
+        <var posición_aleatoria = posiciones [Math.floor (Math.random()*posiciones.length)];
+        if (posición_aleatoria==0){
+            indice_respuesta_correcta =i;
+
+        }
+        respuestas_reordenadas [i] = respuestas_posibles [posiciones [posición_aleatoria]];
+        posiciones.splice (posición_aleatoria, 1);
+    }
+    
+
+
+    <var texto_respuestas = "";
+    ></var>
+    for (i in respuestas_posibles){
+        texto_respuestas +=´<input type =radio value ""r´+i+"> ´</label> +"respuestas_posibles[i]+´</label><br>´
+        
+
+    }
+    
+
+    Document.getElementById["respuestas"].innerHTML = texto_respuestas;        
+            ></var>
+            
+    Document.getElementById("preguntas").innerHTML = preguntas^[indice_aleatorio]
+
+<function comprobar () {
+    <var respuesta>
+}
+ </script>
+    
+</body>
+</html>
